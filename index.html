@@ -1,7 +1,138 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>OPSEC</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333333;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #666666;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 30px;
+            color: #666666;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 24px;
+            color: #666666;
+            margin-top: 20px;
+        }
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-image: url('icon.png');
+            background-size: cover;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="icon"></div>
+    <h1>OPSEC</h1>
+    <h2>Encryption of data</h2>
+    <p>I use VeraCrypt full disk encryption for all of my drives and partitions, not just my OS. VeraCrypt adds enhanced security to the algorithms used for system and partitions encryption making it immune to new developments in attacks. VeraCrypt also solves many vulnerabilities and security issues found in TrueCrypt, the old industry standard for full disk encryption.</p>
+    <h2>Key disclosure law - Who is required to hand over the encryption keys to authorities?</h2>
+    <p>Mandatory key disclosure laws require individuals to turn over encryption keys to law enforcement conducting a criminal investigation. How these laws are implemented (who may be legally compelled to assist) vary from nation to nation, but a warrant is generally required. Defenses against key disclosure laws include steganography and encrypting data in a way that provides plausible deniability.</p>
+    <p>Steganography involves hiding sensitive information (which may be encrypted) inside of ordinary data (for example, encrypting an image file and then hiding it in an audio file). With plausible deniability, data is encrypted in a way that prevents an adversary from being able to prove that the information they are after exists (for example, one password may decrypt benign data and another password, used on the same file, could decrypt sensitive data).</p>
+    <h2>Virtual Private Networks</h2>
+    <p>I always recommend using a good VPN, even for normal every day browsing. View more information on how VPNs work and why using one is important <a href="https://www.bestvpn.com/guides/vpn-working">here</a>.</p>
+    <p>View my other thread for my personal VPN suggestions. Or view this large spreadsheet that I put up on Google Docs (note that I did not compile this data, source is at the bottom of the spreadsheet).</p>
+    <p><a href="https://www.bestvpn.com/guides/vpn-security">Here</a> is a good guide on making VPNs more secure.</p>
+    <p>Random Note: I strongly recommend using wired connections for your internet connection at home as opposed to wireless. There have been many cases of government snoopingby them breaking into networks and collecting wireless data. A classic example is the arrest of Iserdo, the creator of the Butterfly Botnet (Mariposa). Ultimately his arrest and conviction was solidified when Law Enforcement broke into his Wireless Network and monitored him, gathering all the evidence necessary.</p>
+    <h2>Browser Choice and Security</h2>
+    <p>First things first, I will never recommend using Google Chrome and nothing any of you can say will change my mind on this.</p>
+    <p>Firefox is fast, reliable, open source and respects your privacy. Tor Browser is your choice if you need an extra layer of anonymity. It's a modified version of Firefox, it comes with pre-installed privacy add-ons, encryption and an advanced proxy.</p>
+    <h3>Browser Fingerprint</h3>
+    <p>When you visit a web page, your browser voluntarily sends information about its configuration, such as available fonts, browser type, and add-ons. If this combination of information is unique, it may be possible to identify and track you without using cookies. EFF created a Tool called Panopticlick to test your browser to see how unique it is.</p>
+    <h3>WebRTC IP Leak Test</h3>
+    <p>WebRTC is a new communication protocol that relies on JavaScript that can leak your actual IP address from behind your VPN. While software like NoScript prevents this, it's probably a good idea to block this protocol directly as well, just to be safe. For Google Chrome users: There is no known working solution, only a plugin that is easily circumvented. Please use Firefox instead. For Firefox users: <a href="https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/">Test for WebRTC leaks here</a>.</p>
+    <h3>Improve your security with these Firefox add ons</h3>
+    <ul>
+        <li><a href="https://disconnect.me/">Stop tracking with "Disconnect"</a></li>
+        <li><a href="https://github.com/gorhill/uBlock">Block Ads with "uBlock Origin"</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/random-agent-spoofer/">Hinder Browser Fingerprinting with "Random Agent Spoofer"</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/">Automatically Delete Cookies with "Self-Destructing Cookies"</a></li>
+        <li><a href="https://www.eff.org/https-everywhere">Encryption with "HTTPS Everywhere"</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/">Block Content Delivery Networks with "Decentraleyes"</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/umatrix/">Stop cross-site requests with uMatrix</a></li>
+        <li><a href="https://noscript.net/">Be in total control with "NoScript Security Suite"</a></li>
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/policeman/">Content control with "Policeman"</a></li>
+    </ul>
+    <h2>Email Privacy Conscious Email Providers</h2>
+    <ul>
+        <li><a href="https://protonmail.com/">ProtonMail</a></li>
+        <li><a href="https://countermail.com/">CounterMail</a></li>
+        <li><a href="https://www.neomailbox.com/">NeoMailbox</a></li>
+    </ul>
+    <h2>Email Clients</h2>
+    <ul>
+        <li><a href="https://www.thunderbird.net/">Mozilla Thunderbird</a></li>
+        <li><a href="https://www.mailpile.is/">MailPile.is (BETA)</a></li>
+    </ul>
+    <h2>Privacy Email Tools</h2>
+    <ul>
+        <li><a href="https://gpg4usb.org/">gpg4usb</a></li>
+        <li><a href="https://mailvelope.com/">Mailvelope</a></li>
+        <li><a href="https://enigmail.net/">Enigmail</a></li>
+        <li><a href="https://torbirdy.github.io/">TorBirdy</a></li>
+        <li><a href="https://emailprivacytester.com/">Email Privacy Tester</a></li>
+    </ul>
+    <h2>Email Alternatives</h2>
+    <ul>
+        <li><a href="https://bitmessage.org/wiki/Main_Page">Bitmessage</a></li>
+        <li><a href="https://i2p-bote.gitlab.io/">I2P-Bote</a></li>
+        <li><a href="https://retroshare.net/">RetroShare</a></li>
+    </ul>
+    <h2>Privacy Respecting Search Engines</h2>
+    <ul>
+        <li><a href="https://duckduckgo.com/">DuckDuckGo</a></li>
+        <li><a href="https://disconnect.me/search">Disconnect Search</a></li>
+        <li><a href="https://metager.org/">MetaGer</a></li>
+        <li><a href="https://ixquick.com/">ixquick.com</a></li>
+    </ul>
+    <h2>Password Managers</h2>
+    <ul>
+        <li><a href="https://masterpasswordapp.com/">Master Password</a></li>
+        <li><a href="https://keepass.info/">KeePass / KeePassX</a></li>
+        <li><a href="https://www.spideroak.com/encryptr/">Encryptr</a></li>
+    </ul>
+    <h2>Self Contained Networks</h2>
+    <ul>
+        <li><a href="https://geti2p.net/">I2P Anonymous Network</a></li>
+        <li><a href="https://gnunet.org/">GNUnet Framework</a></li>
+        <li><a href="https://freenetproject.org/">The Freenet Project</a></li>
+        <li><a href="https://www.torproject.org/">Tor Project</a></li>
+        <li><a href="https://retroshare.net/">RetroShare</a></li>
+    </ul>
 </body>
 </html>
