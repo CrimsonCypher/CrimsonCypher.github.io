@@ -18,7 +18,7 @@
             padding: 20px 0;
         }
         header img {
-            width: 80px; /* Adjust size as needed */
+            width: 80px;
             height: auto;
             border-radius: 50%;
         }
@@ -84,7 +84,7 @@
     <div class="container">
         <section id="home">
             <h2>Welcome to Crimson Umbrella Security</h2>
-            <p>We are an a entity interested in security from all angles, defense and offensive. Our main goal is to ensure the highest level of security in various domains, providing comprehensive solutions and knowledge to tackle security challenges whilst providing and demonstating the means to test these systems.</p>
+            <p>We are an organization interested in security from all angles. Our main goal is to ensure the highest level of security in various domains, providing comprehensive solutions and knowledge to tackle security challenges.</p>
         </section>
         <section id="about">
             <h2>About Us</h2>
@@ -108,7 +108,15 @@
             const repos = await response.json();
             const repoContent = document.getElementById('repo-content');
 
-            repos.forEach(repo => {
+            const specificRepos = [
+                'HACKING-COURSE-LITE',
+                'OPSEC',
+                'SATELLITE_HACKING',
+                'PENTEST_WIFI',
+                'RF_RANGE_AND_USERS'
+            ];
+
+            repos.filter(repo => specificRepos.includes(repo.name)).forEach(repo => {
                 const repoSection = document.createElement('div');
                 repoSection.classList.add('repo-section');
                 repoSection.innerHTML = `
