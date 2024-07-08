@@ -59,6 +59,15 @@
             position: relative;
             width: 100%;
         }
+        .repo-section {
+            background-color: #161b22;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .repo-section h3 {
+            color: #58a6ff;
+        }
     </style>
 </head>
 <body>
@@ -75,16 +84,15 @@
     <div class="container">
         <section id="home">
             <h2>Welcome to Crimson Umbrella Security</h2>
-            <p>This is the main homepage content. You can customize this section to introduce your website.</p>
+            <p>We are an organization interested in security from all angles. Our main goal is to ensure the highest level of security in various domains, providing comprehensive solutions and knowledge to tackle security challenges.</p>
         </section>
         <section id="about">
             <h2>About Us</h2>
-            <p>This is the about us page content. You can describe your background, expertise, and mission here.</p>
+            <p>Crimson Umbrella Security is dedicated to exploring and addressing security issues in diverse fields. Our team is committed to staying ahead of emerging threats and delivering cutting-edge security strategies and tools.</p>
         </section>
         <section id="knowledge">
             <h2>Knowledge</h2>
-            <!-- Placeholder for repository content -->
-            <p>This section will feature the contents of your repositories.</p>
+            <div id="repo-content"></div>
         </section>
         <section id="tools">
             <h2>Tools</h2>
@@ -92,7 +100,27 @@
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 Crimson Cyber Warfare. All rights reserved.</p>
+        <p>&copy; 2024 Crimson Umbrella Security. All rights reserved.</p>
     </footer>
+    <script>
+        async function fetchRepositories() {
+            const response = await fetch('https://api.github.com/users/CrimsonCypher/repos');
+            const repos = await response.json();
+            const repoContent = document.getElementById('repo-content');
+
+            repos.forEach(repo => {
+                const repoSection = document.createElement('div');
+                repoSection.classList.add('repo-section');
+                repoSection.innerHTML = `
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || 'No description available.'}</p>
+                    <a href="${repo.html_url}" target="_blank">View Repository</a>
+                `;
+                repoContent.appendChild(repoSection);
+            });
+        }
+
+        fetchRepositories();
+    </script>
 </body>
 </html>
