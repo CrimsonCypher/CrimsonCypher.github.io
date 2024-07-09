@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #0d1117;
-    color: #c9d1d9;
+    color: #ffffff;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #161b22;
+    background-color: #111;
     padding: 20px 0;
+    border-bottom: 2px solid #900;
 }
 
 header img {
@@ -21,7 +22,7 @@ header img {
 }
 
 nav {
-    background-color: #0d1117;
+    background-color: #111;
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -29,9 +30,10 @@ nav {
 }
 
 nav a {
-    color: #58a6ff;
+    color: #900;
     text-decoration: none;
     margin: 0 10px;
+    font-weight: 700;
 }
 
 nav a:hover {
@@ -54,13 +56,20 @@ nav a:hover {
 }
 
 .container h2 {
-    color: #58a6ff;
+    color: #900;
 }
 
 footer {
-    background-color: #161b22;
-    color: #8b949e;
+    background-color: #111;
+    color: #666;
     padding: 10px 0;
     position: relative;
     width: 100%;
+    border-top: 2px solid #900;
+}
+
+img.welcome-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
